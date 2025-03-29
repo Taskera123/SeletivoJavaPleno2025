@@ -19,7 +19,7 @@ echo "MinIO iniciado! Configurando MinIO Client..."
 
 # Criar bucket fotos
 if mc ls myminio/fotos >/dev/null 2>&1; then
-  echo "Bucket 'fotos' já existe."
+  echo "Bucket 'fotos' já existe!"
 else
   echo "Criando bucket 'fotos'..."
   mc mb myminio/fotos
