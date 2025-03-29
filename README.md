@@ -16,7 +16,10 @@
 ---
 
 ## 🛠️ Como Executar
-
+Atentar antes de subir, limpar/ deletar imagens de outros containers para não da erro ou conflitos
+   ```bash
+   docker system prune 
+   ```
 1. Navegue até a pasta `sandbox` no projeto.
 2. Execute o seguinte comando no terminal dentro dessa pasta:
 
