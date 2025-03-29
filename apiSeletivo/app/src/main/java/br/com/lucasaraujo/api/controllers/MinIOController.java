@@ -6,6 +6,7 @@ import br.com.lucasaraujo.service.StorageService;
 import br.com.lucasaraujo.util.HashingUtils;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
@@ -15,12 +16,13 @@ import org.springframework.web.multipart.MultipartFile;
 import java.util.List;
 
 @RestController
+@Tag(name = "Teste MinIO")
 @RequestMapping("/minio")
-public class TesteMinIOController {
+public class MinIOController {
 
     private final StorageService storage;
 
-    public TesteMinIOController(StorageService storage) {
+    public MinIOController(StorageService storage) {
         this.storage = storage;
     }
 
@@ -29,7 +31,6 @@ public class TesteMinIOController {
     })
     @PostMapping(consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
     public ResponseEntity<?> upload(@RequestParam final String id, @RequestParam("media") MultipartFile media) {
-        // Armazenar o arquivo recebido
         storage.store(id, resourceOf(media));
 
         return ResponseEntity
@@ -67,7 +68,7 @@ public class TesteMinIOController {
         }
     }
 
-    @GetMapping("/link-temporario/{id}")
+    @GetMapping("/linkTemporario/{id}")
     public String generateTemporaryLink(@PathVariable String id) {
         return storage.generateTemporaryLink(id);
     }
