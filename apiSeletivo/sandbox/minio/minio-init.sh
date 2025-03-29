@@ -5,7 +5,7 @@ sleep 30
 COUNTER=0
 MAX_RETRIES=20
 
-while ! mc alias set myminio http://minio:9000 admin seletivo123@; do
+while ! mc alias set myminio http://minio:9000 admin senhas@2025 ; do
   echo "MinIO ainda não está pronto... aguardando..."
   sleep 2
   COUNTER=$((COUNTER + 1))
