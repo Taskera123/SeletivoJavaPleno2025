@@ -1,1 +1,32 @@
-#!/bin/shnnecho "Aguardando MinIO iniciar..."nsleep 30nCOUNTER=0nMAX_RETRIES=20nnwhile ! mc alias set myminio http://minio:9000 admin senhas@2025; don  echo "MinIO ainda não está pronto... aguardando..."n  sleep 2n  COUNTER=$((COUNTER + 1))n  if [ "$COUNTER" -ge "$MAX_RETRIES" ]; thenn    echo "Erro: MinIO não iniciou após várias tentativas."n    exit 1n  findonennecho "MinIO iniciado! Configurando MinIO Client..."nn# Criar bucket de fotosnif mc ls myminio/bucket-fotos >/dev/null 2>&1; thenn  echo "Bucket 'bucket-fotos' já existe."nelsen  echo "Criando bucket 'bucket-fotos'..."n  mc mb myminio/bucket-fotosn  if [ $? -eq 0 ]; thenn    echo "Bucket 'bucket-fotos' criado com sucesso!"n  elsen    echo "Erro ao criar bucket!"n    exit 1n  finfi
+#!/bin/sh
+
+echo "Aguardando MinIO iniciar..."
+sleep 30
+COUNTER=0
+MAX_RETRIES=20
+
+while ! mc alias set myminio http://minio:9000 admin seletivo123@; do
+  echo "MinIO ainda não está pronto... aguardando..."
+  sleep 2
+  COUNTER=$((COUNTER + 1))
+  if [ "$COUNTER" -ge "$MAX_RETRIES" ]; then
+    echo "Erro: MinIO não iniciou após várias tentativas."
+    exit 1
+  fi
+done
+
+echo "MinIO iniciado! Configurando MinIO Client..."
+
+# Criar bucket fotos
+if mc ls myminio/fotos >/dev/null 2>&1; then
+  echo "Bucket 'fotos' já existe."
+else
+  echo "Criando bucket 'fotos'..."
+  mc mb myminio/fotos
+  if [ $? -eq 0 ]; then
+    echo "Bucket 'fotos' criado com sucesso!"
+  else
+    echo "Erro ao criar bucket!"
+    exit 1
+  fi
+fi
