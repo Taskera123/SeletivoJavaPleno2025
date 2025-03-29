@@ -21,7 +21,7 @@
 2. Execute o seguinte comando no terminal dentro dessa pasta:
 
    ```bash
-   docker-compose up
+   docker-compose up --build
    ```
 
    Este comando iniciará os seguintes containers:
