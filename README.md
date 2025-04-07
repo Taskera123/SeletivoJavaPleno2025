@@ -1,7 +1,7 @@
 ## 🧩 Projeto: Sistema do Processo Seletivo Pleno
 
 **Nome:** Lucas Henrique Tasca de Araujo  
-**Inscrição:** 8382
+**Inscrição:** 9307
 
 ---
 
