@@ -1,9 +1,9 @@
 ## 🧩 Projeto: Sistema do Processo Seletivo Pleno
 
-**Nome:** Lucas Henrique Tasca de Araujo 
-**CPF:** 04310316140
-**E-mail:** tascalucas6@gmail.com
-**Inscrição:** 9307
+- **Nome:** Lucas Henrique Tasca de Araujo 
+- **CPF:** 04310316140
+- **E-mail:** tascalucas6@gmail.com
+- **Inscrição:** 9307
 
 ---
 
